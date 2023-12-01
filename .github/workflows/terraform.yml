@@ -30,10 +30,10 @@ jobs:
       id: plan
       run: terraform plan -no-color
       continue-on-error: true
-   # - name: Terraform Apply
-    #  id: apply
-     # run: terraform apply -auto-approve
-     
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
     - uses: actions/github-script@v2
       if: github.event_name == 'push'
       env:
